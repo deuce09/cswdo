@@ -733,8 +733,10 @@ const HRDashboard: React.FC = () => {
                 <th style={{ padding: '12px 15px', textAlign: 'left', color: cardContent_textColor, fontWeight: 'bold' }}>Department</th>
                 <th style={{ padding: '12px 15px', textAlign: 'left', color: cardContent_textColor, fontWeight: 'bold' }}>Age</th>
                 <th style={{ padding: '12px 15px', textAlign: 'left', color: cardContent_textColor, fontWeight: 'bold' }}>Status</th>
+                <th style={{ padding: '12px 15px', textAlign: 'left', color: cardContent_textColor, fontWeight: 'bold' }}>Years of Service</th>
                 <th style={{ padding: '12px 15px', textAlign: 'left', color: cardContent_textColor, fontWeight: 'bold' }}>Rating</th>
                 <th style={{ padding: '12px 15px', textAlign: 'left', color: cardContent_textColor, fontWeight: 'bold' }}>Training</th>
+                <th style={{ padding: '12px 15px', textAlign: 'left', color: cardContent_textColor, fontWeight: 'bold' }}>Attendance</th>
                 <th style={{ padding: '12px 15px', textAlign: 'center', color: cardContent_textColor, fontWeight: 'bold' }}>Actions</th>
               </tr>
             </thead>
@@ -783,11 +785,17 @@ const HRDashboard: React.FC = () => {
                         {emp.status}
                       </span>
                     </td>
+                    <td style={{ padding: '12px 15px', color: cardContent_textColor }}>
+                      {/* YEARS OF SERVICE HERE */}
+                    </td>
                     <td style={{ padding: '12px 15px', color: '#90ee90', fontWeight: 'bold' }}>
                       {emp.performanceRating?.toFixed(1) || 'N/A'}
                     </td>
                     <td style={{ padding: '12px 15px', color: cardContent_textColor }}>
                       {emp.trainingHours ? `${emp.trainingHours}h` : 'N/A'}
+                    </td>
+                    <td style={{ padding: '12px 15px', color: cardContent_textColor }}>
+                      {/* ATTENDANCE HERE */}
                     </td>
                     <td style={{ padding: '12px 15px', textAlign: 'center' }}>
                       <div style={{ display: 'flex', gap: '8px', justifyContent: 'center' }}>
