@@ -699,7 +699,7 @@ const HRDashboard: React.FC = () => {
       </div>
 
       {/* Employee List Table */}
-      <div style={{
+      <div className='employeeDirectoryTbl' style={{
         background: cardBackground,
         border: '1px solid rgba(255, 255, 255, 0.15)',
         padding: '25px',
@@ -885,7 +885,7 @@ const HRDashboard: React.FC = () => {
             </div>
 
             <div className="form-group">
-              <label className="form-label">Full Name</label>
+              <label className="form-label">Full Name (LAST NAME, FIRST NAME, MIDDLE INITIAL)</label>
               <input
                 type="text"
                 className="form-input"
