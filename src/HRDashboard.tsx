@@ -8,6 +8,36 @@ interface DepartmentCount {
   count: number;
 }
 
+function deptFullName(deptName: string) {
+  switch (deptName) {
+    case "CYDD":
+      return "(CYDD) Child and Youth Development Division";
+    case "ADMIN":
+      return "(ADMIN) Administrative Division";
+    case "SSLCDD":
+      return "(SSLCDD) Special Sectors, Livelihood and Community Development Division";
+    case "CIU":
+      return "(CIU) Crisis Intervention Unit";
+    case "PSIU":
+      return "(PSIU) Psycho Social Intervention Unit";
+    case "BPARCC":
+      return "(BPARCC) Bahay Pag-Asa Residential Care Center";
+    case "TMC":
+      return "(TMC) Tahanan ni Maria Center";
+    case "4Ps":
+      return "(4Ps) Pantawid Pamilyang Pilipino Program";
+    case "FDC":
+      return "(FDC) Funeraria de Cabanatuan";
+    case "CABALAI":
+      return "Cabalai ni Apong";
+  }
+}
+
+
+
+
+
+
 interface StatusCount {
   name: string;
   count: number;
@@ -451,7 +481,9 @@ const HRDashboard: React.FC = () => {
                   marginBottom: '8px',
                   fontSize: cardContent_fontSize
                 }}>
-                  <span style={{ color: cardContent_textColor }}>{dept.name}</span>
+
+
+                  <span style={{ color: cardContent_textColor }}>{deptFullName(dept.name)}</span>
                   <span style={{ color: '#64c8ff', fontWeight: 'bold' }}>{dept.count}</span>
                 </div>
                 <div style={{
@@ -763,7 +795,6 @@ const HRDashboard: React.FC = () => {
                           onClick={() => handleEditEmployee(emp)}
                           className="edit-button"
                           style={{
-                            background: 'linear-gradient(135deg, #64c8ff 0%, #4a9eff 100%)',
                             border: 'none',
                             color: '#0a0e27',
                             padding: '6px 12px',
@@ -784,7 +815,9 @@ const HRDashboard: React.FC = () => {
                             e.currentTarget.style.boxShadow = 'none';
                           }}
                         >
-                          EDIT
+                          <span className="material-symbols-outlined">
+                            edit
+                          </span>
                         </button>
                         <button
                           onClick={() => handleDeleteEmployee(emp.id)}
@@ -813,7 +846,9 @@ const HRDashboard: React.FC = () => {
                             e.currentTarget.style.boxShadow = 'none';
                           }}
                         >
-                          DELETE
+                          <span className="material-symbols-outlined">
+                            delete
+                          </span>
                         </button>
                       </div>
                     </td>
